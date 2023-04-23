@@ -1,0 +1,21 @@
+Q2. Find smallest and second smallest positive roots 
+of the equation tan x = 4x, with an accuracy of 10−3. 
+Code:
+f=@(x) tan(x)-4*x;
+g=@(x)(atan(4*x));
+tol=0.001;
+i=5;
+p0=1;
+n=1000;
+while(i<=n)
+p=g(p0);
+if(abs(p-p0)<tol)
+fprintf("Root is %d",p);
+break
+else
+i=i+1;
+p0=p;
+end
+end
+Output:
+Root is 1.393111e+00
