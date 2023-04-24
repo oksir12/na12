@@ -1,0 +1,20 @@
+clc
+clear all
+f = @(x)x^2-17
+df= @(x)2*x
+n = 100
+x0 = input('Enter the nearest approximation number')
+tol = input('Enter the tolerance')
+while(i<=n)
+ if(df(x0)~=0)
+ x1=x0-f(x0)/df(x0)
+ if(abs(x1-x0)<=tol)
+ disp('Root is x1')
+ x1
+ break;
+ else
+ x0=x1;
+ i=i+1;
+ end
+ else
+ disp('Change initial number')
