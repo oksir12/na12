@@ -1,0 +1,23 @@
+clc
+clear all
+f = @(x)4*x^2-exp(x)-exp(-x)
+df= @(x)8*x + exp(-x) - exp(x)
+n = 100
+tol = input('Enter the tolerance')
+x0 = input('Enter the nearest approximation number')
+while(i<=n)
+ if(df(x0)~=0)
+ x1=x0-f(x0)/df(x0)
+ if(abs(x1-x0)<=tol)
+ disp('Root is x1')
+ x1
+ break;
+ else
+ x0=x1;
+ i=i+1;
+ end
+ else
+ disp('Change initial number')
+ end
+end
+RE
