@@ -1,0 +1,24 @@
+3. Find the first three iterations obtained by the Power method applied to the following matrix. [1 1 0 0;
+1 2 0 1; 0 0 3 3; 0 1 2 3] Use x 0 = [1, 1, 0, 1]T .
+Sol:
+clc;
+clear all;
+A=[1 1 1 0;
+ 1 2 0 1;
+ 0 0 3 3;
+ 0 1 2 3];
+x0=[1; 1; 0; 1;];
+k1=100;
+MAX=3;
+tol=10^-3;
+for j=1:MAX
+ y=A*x0;
+ k=max(abs(y));
+ x=y/k;
+ if abs(k1-k)<tol
+ break;
+ end
+ x0=x;
+ k1=k;
+end
+fpri
